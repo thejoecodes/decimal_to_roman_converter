@@ -1,0 +1,127 @@
+<html>
+    <head>
+    <title>Roman Numeral Converter</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(text).hide();
+            $(result).hide();
+            $("#convert").click(function(){
+
+            var num = $("#num").val();   
+            
+            const converted = {
+            M: 1000,
+            CM: 900,
+            D: 500,
+            CD: 400,
+            C: 100,
+            XC:90,
+            L: 50,
+            XL: 40,
+            X: 10,
+            IX: 9,
+            V: 5,
+            IV: 4,
+            I: 1
+        }
+
+        function convertToRoman(num) {
+            let final = '';
+            for(let decimal in converted){
+                while(num>=converted[decimal]){
+                        num-=converted[decimal];
+                        final += decimal;
+                }
+                }
+            return final;
+            alert(fnal);
+       
+    }
+    $(text).show();
+    
+    $(result).show($("#result").val = convertToRoman();
+    
+            });
+           
+        });
+    
+    
+           
+    </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+    *{
+        box-sizing:border-box;
+     }
+
+    body{
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        background-color: #a4c5c6;
+        margin: 0;
+        padding: 20px;
+    }
+
+    form{
+        background-color:#ffffff;
+        max-width: 700px;
+        margin: auto;
+        box-shadow: 5px 2px 10px rgba(0,0,0 ,0.4);
+        border-radius: 2px;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .form-control{
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .form-control label{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .form-control input{
+        display: block;
+        width: 100%;
+        border-radius: 2px;
+        border: 1px solid #888;
+        height: 50px;
+        font-family:inherit;
+    }
+
+    button{
+        display: block;
+        background-color:#679b9b;
+        width: 25%;
+        padding: 10px;
+        font-family: inherit;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+</style>
+
+    </head>
+
+    <body>
+        <h1>Decimal to Roman Numbers Converter</h1>
+        <form> 
+            <div class="form-control">
+                <label for="number" id="number">Number to be converted:</label>
+                  <input type="number" id="num" placeholder="Enter a positive number to convert" min="1" required>
+            </div>
+            <button id="convert" >Convert</button>
+            
+            <div class="form-control">
+                <label for="text" id="text">Equivalent Roman Number:</label>
+                  <input type="text" id="result" name="number">
+            </div>
+            
+        </form>
+    </body>
+    
+</html>
